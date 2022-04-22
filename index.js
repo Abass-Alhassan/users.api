@@ -3,7 +3,10 @@ const usersRoute =require("./routes/usersRoutes")
 const path = require("path")
 const logger = require("./middlewares/user.logger")
 const booksRoute = require("./routes/booksRoute")
+const connectDB = require("./config/connectDB")
+require("dotenv").config()
 
+connectDB()
 
 
 const app = express()
@@ -25,6 +28,6 @@ app.get("/*", (req,res)=>{
 const PORT=4000;
 
 app.listen(PORT,()=>{
-    console.log("SERVER IS F*KED UP")
+    console.log("SERVER IS UP")
 
 })
